@@ -6,6 +6,7 @@ target 'Snapchat' do
   use_frameworks!
 
   # Pods for Snapchat
+  pod 'SDWebImage', '~> 4.0'
   pod 'Firebase'
   pod 'FirebaseCore', '~> 3.6'
   pod 'FirebaseAuth', '~> 3.1'

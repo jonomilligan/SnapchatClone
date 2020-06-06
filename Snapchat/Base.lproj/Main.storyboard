@@ -94,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fDj-3A-YAD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier2" id="fDj-3A-YAD">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fDj-3A-YAD" id="G9N-FL-bnA">
@@ -120,6 +120,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="EMd-wS-w4L" kind="show" identifier="snapsToView" id="PcM-eI-JtE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKz-qf-efH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,6 +237,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjl-VJ-Qnz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3786" y="133"/>
+        </scene>
+        <!--View Snaps View Controller-->
+        <scene sceneID="2wL-wx-ehT">
+            <objects>
+                <viewController id="EMd-wS-w4L" customClass="ViewSnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WvP-q4-zI7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCV-75-JDZ">
+                                <rect key="frame" x="12" y="829" width="390" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FGA-8Q-o9T">
+                                <rect key="frame" x="12" y="100" width="390" height="717"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gZW-4k-hIU" firstAttribute="bottom" secondItem="dCV-75-JDZ" secondAttribute="bottom" constant="12" id="EPg-9I-HWs"/>
+                            <constraint firstItem="dCV-75-JDZ" firstAttribute="leading" secondItem="gZW-4k-hIU" secondAttribute="leading" constant="12" id="FFu-An-yG8"/>
+                            <constraint firstItem="FGA-8Q-o9T" firstAttribute="top" secondItem="gZW-4k-hIU" secondAttribute="top" constant="12" id="KRV-5e-hPK"/>
+                            <constraint firstItem="FGA-8Q-o9T" firstAttribute="leading" secondItem="gZW-4k-hIU" secondAttribute="leading" constant="12" id="Nfe-fs-bob"/>
+                            <constraint firstItem="gZW-4k-hIU" firstAttribute="trailing" secondItem="FGA-8Q-o9T" secondAttribute="trailing" constant="12" id="etW-Rk-1Vg"/>
+                            <constraint firstItem="gZW-4k-hIU" firstAttribute="trailing" secondItem="dCV-75-JDZ" secondAttribute="trailing" constant="12" id="fIA-TV-kh7"/>
+                            <constraint firstItem="dCV-75-JDZ" firstAttribute="top" secondItem="FGA-8Q-o9T" secondAttribute="bottom" constant="12" id="hgQ-MO-Ad1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gZW-4k-hIU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="K0c-FB-6PE"/>
+                    <connections>
+                        <outlet property="imageView" destination="FGA-8Q-o9T" id="JcA-kN-EJi"/>
+                        <outlet property="messageLabel" destination="dCV-75-JDZ" id="w3w-tN-Eof"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6E4-Ua-ezv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1896" y="830"/>
         </scene>
     </scenes>
     <resources>
